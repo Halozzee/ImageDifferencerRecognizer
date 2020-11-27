@@ -6,6 +6,6 @@ It has no purpose but to show it's working and doing what its meant to do.
 
 Requierments
 =====================================
-It requiers a FastBitmapLib to run which one you can get from NuGet package manager.
+It requiers the FastBitmapLib to run which one you can get from NuGet package manager.
 
 [FastBitmapLib](https://www.nuget.org/packages/FastBitmapLib/)
