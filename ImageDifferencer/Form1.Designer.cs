@@ -38,7 +38,12 @@
             this.percentageAccuracyNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.fragmentNameTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.saveImgBtn = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sourceImageBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sourceImageBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultImageBox)).BeginInit();
@@ -141,21 +146,61 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "RGB compare %";
             // 
+            // fragmentNameTextBox
+            // 
+            this.fragmentNameTextBox.Location = new System.Drawing.Point(258, 425);
+            this.fragmentNameTextBox.Name = "fragmentNameTextBox";
+            this.fragmentNameTextBox.Size = new System.Drawing.Size(92, 20);
+            this.fragmentNameTextBox.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(264, 409);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Fragment name";
+            // 
+            // saveImgBtn
+            // 
+            this.saveImgBtn.Location = new System.Drawing.Point(682, 373);
+            this.saveImgBtn.Name = "saveImgBtn";
+            this.saveImgBtn.Size = new System.Drawing.Size(75, 22);
+            this.saveImgBtn.TabIndex = 12;
+            this.saveImgBtn.Text = "Save image";
+            this.saveImgBtn.UseVisualStyleBackColor = true;
+            this.saveImgBtn.Click += new System.EventHandler(this.saveImgBtn_Click);
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(390, 425);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(101, 34);
             this.button2.TabIndex = 9;
-            this.button2.Text = "Find image 1 on image 2";
+            this.button2.Text = "Find image 2 on image 1";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(387, 388);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(101, 34);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "FAST Find image 2 on image 1";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 471);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.saveImgBtn);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.fragmentNameTextBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -168,6 +213,7 @@
             this.Controls.Add(this.sourceImageBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sourceImageBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sourceImageBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultImageBox)).EndInit();
@@ -189,7 +235,12 @@
         private System.Windows.Forms.NumericUpDown percentageAccuracyNumericUpDown;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox fragmentNameTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button saveImgBtn;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

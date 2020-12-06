@@ -74,7 +74,40 @@ namespace ImageDifferencer
 
             FragmentFinder.FindImage(img1, img2, ValidatePercent, out Lpoint);
 
-            FragmentFinder.DrawRectangles(img1, Lpoint);
+            ImageWorks.DrawRectangles(img1, Lpoint);
+            ImageWorks.NameRectangles(img1, Lpoint, fragmentNameTextBox.Text);
+
+            resultImageBox.Image = ((Bitmap)img1.Clone());
+            resultImageBox.Refresh();
+        }
+
+        private void saveImgBtn_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                resultImageBox.Image.Save(saveFileDialog1.FileName);
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (resultImageBox.Image != null)
+                resultImageBox.Image.Dispose();
+
+            Bitmap img1 = (Bitmap)sourceImageBox1.Image.Clone();
+            Bitmap img2 = (Bitmap)sourceImageBox2.Image.Clone();
+
+            double ValidatePercent = 1 - (double)(percentageAccuracyNumericUpDown.Value / 100);
+
+            var f = FragmentFinder.FastFinder(img1, img2, ValidatePercent);
+
+            ImageWorks.DrawRectangles(img1, f);
+            ImageWorks.NameRectangles(img1, f, fragmentNameTextBox.Text);
 
             resultImageBox.Image = ((Bitmap)img1.Clone());
             resultImageBox.Refresh();

@@ -10,11 +10,6 @@ namespace ImageDifferencer
 {
     public static class Differencer
     {
-        private static int RGBToGreyScale(Color c)
-        {
-            return (int)(c.R * 0.2126 + c.B * 0.7152 + c.G * 0.0722);
-        }
-
         public static double DifferencePercent(int SumA, int SumB)
         {
             double val = (double)Math.Abs(SumA - SumB) / 100;
@@ -23,8 +18,8 @@ namespace ImageDifferencer
 
         public static bool ValidateRGBDIfferencePercent(Color c1, Color c2, double RequiredToPass)
         {
-            int frst = RGBToGreyScale(c1);
-            int scnd = RGBToGreyScale(c2);
+            int frst = ImageWorks.RGBToGreyScale(c1);
+            int scnd = ImageWorks.RGBToGreyScale(c2);
             return DifferencePercent(frst, scnd) <= RequiredToPass;
         }
 
